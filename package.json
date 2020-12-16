@@ -23,6 +23,7 @@
     "@storybook/addon-essentials": "^6.1.11",
     "@storybook/addon-links": "^6.1.11",
     "@storybook/react": "^6.1.11",
+    "@uifabric/example-data": "^7.1.5",
     "babel-loader": "^8.2.2",
     "eslint": "^7.15.0",
     "eslint-config-airbnb-typescript-prettier": "^4.1.0",
