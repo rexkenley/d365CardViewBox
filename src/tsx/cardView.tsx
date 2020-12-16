@@ -2,13 +2,9 @@ import React from "react";
 import { Fabric } from "@fluentui/react/lib/Fabric";
 import { Stack } from "@fluentui/react/lib/Stack";
 import { Text, ITextProps } from "@fluentui/react/lib/Text";
-import {
-  IDocumentCardPreviewProps,
-  IDocumentCardActivityPerson
-} from "@fluentui/react/lib/DocumentCard";
 
+import getInitials from "../ts/name";
 import Card from "./card";
-import { deepStrictEqual } from "assert";
 
 /**
  * ICardData
@@ -52,7 +48,7 @@ const CardView: React.FC<ICardView> = (props) => {
           let cardProps: any = {
             title: data.name,
             activity: "Owner",
-            people: [{ name: data.owner, initials: "" }],
+            people: [{ name: data.owner, initials: getInitials(data.owner) }],
             isCompact
           };
 
