@@ -12,17 +12,14 @@ import { deepStrictEqual } from "assert";
 
 /**
  * ICardData
- * @interface ICardData
- * @property {IDocumentCardPreviewProps} [preview]
- * @property {string} title
- * @property {string} [activity]
- * @property {IDocumentCardActivityPerson[]} [people]
+ * @property {string} name
+ * @property {string} owner
+ * @property {string} [preview]
  */
 export interface ICardData {
-  preview?: IDocumentCardPreviewProps;
-  title: string;
-  activity?: string;
-  people?: IDocumentCardActivityPerson[];
+  name: string;
+  owner: string;
+  preview?: string;
 }
 
 /**
@@ -52,7 +49,25 @@ const CardView: React.FC<ICardView> = (props) => {
     <Fabric>
       <Stack tokens={{ childrenGap: 20 }}>
         {dataset.map((data) => {
-          const cardProps = { ...data, isCompact };
+          let cardProps: any = {
+            title: data.name,
+            activity: "Owner",
+            people: [{ name: data.owner, initials: "" }],
+            isCompact
+          };
+
+          if (data.preview)
+            cardProps = {
+              ...cardProps,
+              preview: {
+                previewImages: [
+                  {
+                    previewImageSrc: data.preview,
+                    width: 144
+                  }
+                ]
+              }
+            };
 
           return <Card {...cardProps} />;
         })}

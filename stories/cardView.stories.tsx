@@ -21,34 +21,8 @@ export const InitializeCardView = Template.bind({});
 InitializeCardView.args = {};
 
 const dataset: ICardData[] = [
-  {
-    title: "Title 1",
-    activity: "Activity 1",
-    people: [{ name: "Person 1", initials: "P1" }],
-    preview: {
-      previewImages: [
-        {
-          previewImageSrc: TestImages.documentPreview,
-          iconSrc: TestImages.iconPpt,
-          width: 144
-        }
-      ]
-    }
-  },
-  {
-    title: "Title 2",
-    activity: "Activity 2",
-    people: [{ name: "Person 2", initials: "P2" }],
-    preview: {
-      previewImages: [
-        {
-          previewImageSrc: TestImages.documentPreview,
-          iconSrc: TestImages.iconPpt,
-          width: 144
-        }
-      ]
-    }
-  }
+  { name: "Title 1", owner: "Owner 1" },
+  { name: "Title 2", owner: "Owner 2" }
 ];
 
 export const CardViewWithData = Template.bind({});

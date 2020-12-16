@@ -87,7 +87,7 @@ export const ActivityCardInitials = Template.bind({});
 ActivityCardInitials.args = {
   title: "Activity Card",
   activity: "Created by",
-  people: [{ name: "Creator Person", initials: "CP" }]
+  people: [{ name: "Creator Person", initials: "CP", profileImageSrc: "" }]
 };
 
 export const ActivityCardPicture = Template.bind({});
