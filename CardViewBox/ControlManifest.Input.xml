@@ -18,16 +18,17 @@
       -->
     </external-service-usage>
     <!-- dataset node represents a set of entity records on CDS; allow more than one datasets -->
-    <data-set name="cardViewDataSet" display-name-key="Card View Data Set">
-      <property-set name="name" display-name-key="Name" description-key="Name" of-type="SingleLine.Text" usage="bound" required="true" />
-      <property-set name="owner" display-name-key="Owner" description-key="Owner" of-type="SingleLine.Text" usage="bound" required="true" />
+    <data-set name="cardViewDataSet" display-name-key="Card View Data Set" cds-data-set-options="displayCommandBar:true;displayViewSelector:false;displayQuickFind:true">
+      <property-set name="title" display-name-key="Title" description-key="Title" of-type="SingleLine.Text" usage="bound" required="true" />
+      <property-set name="person" display-name-key="Person" description-key="Person" of-type="SingleLine.Text" usage="bound" required="false" />
       <property-set name="preview" display-name-key="Preview" description-key="Preview" of-type="SingleLine.TextArea" usage="bound" required="false" />
     </data-set>
+    <property name="activity" display-name-key="Activity" description-key="Activity" of-type="SingleLine.Text" usage="input" required="false" />
     <resources>
       <code path="index.ts" order="1"/>
     </resources>
-    <!-- UNCOMMENT TO ENABLE THE SPECIFIED API
     <feature-usage>
+      <!-- UNCOMMENT TO ENABLE THE SPECIFIED API
       <uses-feature name="Device.captureAudio" required="true" />
       <uses-feature name="Device.captureImage" required="true" />
       <uses-feature name="Device.captureVideo" required="true" />
@@ -35,8 +36,8 @@
       <uses-feature name="Device.getCurrentPosition" required="true" />
       <uses-feature name="Device.pickFile" required="true" />
       <uses-feature name="Utility" required="true" />
+      -->
       <uses-feature name="WebAPI" required="true" />
     </feature-usage>
-    -->
   </control>
 </manifest>

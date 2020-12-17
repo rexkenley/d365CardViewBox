@@ -8,13 +8,15 @@ import Card from "./card";
 
 /**
  * ICardData
- * @property {string} name
- * @property {string} owner
+ * @property {string} title
+ * @property {string} [person]
+ * @property {string} [activity]
  * @property {string} [preview]
  */
 export interface ICardData {
-  name: string;
-  owner: string;
+  title: string;
+  person?: string;
+  activity?: string;
   preview?: string;
 }
 
@@ -46,9 +48,9 @@ const CardView: React.FC<ICardView> = (props) => {
       <Stack tokens={{ childrenGap: 20 }}>
         {dataset.map((data) => {
           let cardProps: any = {
-            title: data.name,
-            activity: "Owner",
-            people: [{ name: data.owner, initials: getInitials(data.owner) }],
+            title: data.title,
+            activity: data.activity,
+            people: [{ name: data.person, initials: getInitials(data.person) }],
             isCompact
           };
 

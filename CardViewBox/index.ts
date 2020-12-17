@@ -34,7 +34,7 @@ export class CardViewBox
     const { parameters, mode } = context;
 
     this.container = container;
-    this.notifyOutputChanged = notifyOutputChanged;
+    // this.notifyOutputChanged = notifyOutputChanged;
   }
 
   /**
@@ -43,7 +43,7 @@ export class CardViewBox
    */
   public updateView(context: ComponentFramework.Context<IInputs>): void {
     const { parameters, mode } = context,
-      { cardViewDataSet } = parameters;
+      { cardViewDataSet, activity } = parameters;
 
     const props: ICardView = {
       isCompact: true,
@@ -52,9 +52,10 @@ export class CardViewBox
           const current = cardViewDataSet.records[id];
 
           return {
-            name: current.getFormattedValue("name"),
-            owner: current.getFormattedValue("owner"),
-            preview: current.getFormattedValue("preview")
+            title: current.getFormattedValue("title"),
+            person: current.getFormattedValue("person"),
+            preview: current.getFormattedValue("preview"),
+            activity: (activity && activity.raw) || ""
           };
         }
       )
@@ -64,6 +65,7 @@ export class CardViewBox
   }
 
   public getOutputs(): IOutputs {
+    // cardViewDataSet.refresh
     return {};
   }
 

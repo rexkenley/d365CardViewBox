@@ -1,4 +1,4 @@
-export default function getInitials(name: string): string {
+export default function getInitials(name?: string): string {
   if (!name) return "";
 
   const letters = /^[A-Za-z]+$/;
